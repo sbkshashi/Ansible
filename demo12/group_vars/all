@@ -1,13 +1,13 @@
 #
 ec2: 
-  region: us-east-1
-  credentials: myansiblekey
-  image: ami-c998b6b2
-  sg: myansibleSG
+  region: ap-south-1
+  credentials: myaniblekey-new
+  image: ami-76d6f519
+  sg: launch-wizard-2
   instance_type: t2.micro
-  subnet: subnet-d9434290
+  subnet: subnet-3b5d2d53
   public_ip: yes
-  count: 1
+  count: 3
   tags: 
     Name: EC2_Ansible_App
   volumes:
