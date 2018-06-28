@@ -1,0 +1,42 @@
+---
+
+- hosts: DC
+  sudo: yes
+
+  tasks:
+   - name: Install Apache packages on RedHat Family
+     yum: name=httpd state=present
+     when: ansible_os_family=="RedHat"
+   - name: Install Apache packages on Ubuntu Family
+     apt: name=apache2 state=present
+     when: ansible_os_family=="Ubuntu"
+
+   - name: Start Apache service
+     service: name=httpd state=started enabled=True
+    
+   - name: Deploy Site Files
+     template: src=template/index.j2 dest=/var/www/html/index.html
+
+     notify:
+     - restart
+
+  handlers:
+    - name: restart
+      service: name=httpd state=restarted
+
+- hosts: db
+  sudo: yes
+
+  tasks:
+   - name: Install Maria DB  packages
+     yum: name=mariadb-server state=present
+
+   - name: Start Maria DB  start
+     service: name=mariadb state=started enabled=True
+
+- hosts: db:DC
+  sudo: yes
+
+  tasks:
+   - name: Stop Firewall
+     service: name=firewalld state=stopped enabled=True

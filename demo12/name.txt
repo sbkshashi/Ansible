@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "hostvars": {
+      "13.127.32.178": {
+        "ansible_host": "13.127.32.178", 
+        "ec2__in_monitoring_element": false, 
+        "ec2_account_id": "422463723889", 
+        "ec2_ami_launch_index": "0", 
+        "ec2_architecture": "x86_64", 
+        "ec2_block_devices": {
+          "xvda": "vol-046b3d30eb0929904"
+        }, 
+        "ec2_client_token": "", 
+        "ec2_dns_name": "ec2-13-127-32-178.ap-south-1.compute.amazonaws.com", 
+        "ec2_ebs_optimized": false, 
+        "ec2_eventsSet": "", 
+        "ec2_group_name": "", 
+        "ec2_hypervisor": "xen", 
+        "ec2_id": "i-0c30b7268fb9d74f0", 
+        "ec2_image_id": "ami-76d6f519", 
+        "ec2_instance_profile": "", 
+        "ec2_instance_type": "t2.micro", 
+        "ec2_ip_address": "13.127.32.178", 
+        "ec2_item": "", 
+        "ec2_kernel": "", 
+        "ec2_key_name": "myaniblekey-new", 
+        "ec2_launch_time": "2018-06-27T09:25:13.000Z", 
+        "ec2_monitored": false, 
+        "ec2_monitoring": "", 
+        "ec2_monitoring_state": "disabled", 
+        "ec2_persistent": false, 
+        "ec2_placement": "ap-south-1a", 
+        "ec2_platform": "", 
+        "ec2_previous_state": "", 
+        "ec2_previous_state_code": 0, 
+        "ec2_private_dns_name": "ip-172-31-23-105.ap-south-1.compute.internal", 
+        "ec2_private_ip_address": "172.31.23.105", 
+        "ec2_public_dns_name": "ec2-13-127-32-178.ap-south-1.compute.amazonaws.com", 
+        "ec2_ramdisk": "", 
+        "ec2_reason": "", 
+        "ec2_region": "ap-south-1", 
+        "ec2_requester_id": "", 
+        "ec2_root_device_name": "/dev/xvda", 
+        "ec2_root_device_type": "ebs", 
+        "ec2_security_group_ids": "sg-0525d94d8823fc727", 
+        "ec2_security_group_names": "launch-wizard-2", 
+        "ec2_sourceDestCheck": "true", 
+        "ec2_spot_instance_request_id": "", 
+        "ec2_state": "running", 
+        "ec2_state_code": 16, 
+        "ec2_state_reason": "", 
+        "ec2_subnet_id": "subnet-3b5d2d53", 
+        "ec2_virtualization_type": "hvm", 
+        "ec2_vpc_id": "vpc-a86428c0"
+      }
+    }
+  }, 
+  "ami_76d6f519": [
+    "13.127.32.178"
+  ], 
+  "ap-south-1": [
+    "13.127.32.178"
+  ], 
+  "ap-south-1a": [
+    "13.127.32.178"
+  ], 
+  "ec2": [
+    "13.127.32.178"
+  ], 
+  "i-0c30b7268fb9d74f0": [
+    "13.127.32.178"
+  ], 
+  "key_myaniblekey_new": [
+    "13.127.32.178"
+  ], 
+  "platform_undefined": [
+    "13.127.32.178"
+  ], 
+  "security_group_launch_wizard_2": [
+    "13.127.32.178"
+  ], 
+  "tag_none": [
+    "13.127.32.178"
+  ], 
+  "type_t2_micro": [
+    "13.127.32.178"
+  ], 
+  "vpc_id_vpc_a86428c0": [
+    "13.127.32.178"
+  ]
+}

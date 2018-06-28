@@ -1,0 +1,56 @@
+---
+
+- hosts: DC
+  sudo: yes
+  vars:
+    http_port: 80
+    doc_root: /var/www/html/shashi
+    doc_dir: /shashi/
+  vars_prompt:
+  - name: username
+    Prompt: What is your name?
+  tasks:
+   - name: Install Apache packages on RedHat Family
+     yum: name=httpd state=present
+     when: ansible_os_family=="RedHat"
+   - name: Install Apache packages on Ubuntu Family
+     apt: name=apache2 state=present
+     when: ansible_os_family=="Ubuntu"
+
+   - name: Start Apache service
+     service: name=httpd state=started enabled=True
+
+   - name: Deply Configuration file
+     template: src=templates/httpd.j2 dest=/etc/httpd/conf/httpd.conf
+     notify:
+      - restart
+    
+   - name: create Site location
+     file: path={{doc_root}} state=directory
+
+   - name: Deploy Site files
+     template: src=templates/index.j2 dest={{doc_root}}/index.html
+   - name: Deploy Site info files
+     template: src=templates/info.j2 dest={{doc_root}}/index.html
+
+
+  handlers:
+   - name: restart
+     service: name=httpd state=restarted
+
+#- hosts: db
+#  sudo: yes
+
+ # tasks:
+  # - name: Install Maria DB  packages
+   #  yum: name=mariadb-server state=present
+
+   #- name: Start Maria DB  start
+    # service: name=mariadb state=started enabled=True
+
+#- hosts: db:DC
+ # sudo: yes
+
+ # tasks:
+  # - name: Stop Firewall
+   #  service: name=firewalld state=stopped enabled=True

@@ -1,0 +1,17 @@
+10.160.0.3
+
+[web]
+10.160.0.3
+
+
+[db]
+10.160.0.3
+
+[DC:children]
+
+web
+db
+
+[DC:vars]
+ansible_ssh_user=root
+ansible_ssh_pass=redhat

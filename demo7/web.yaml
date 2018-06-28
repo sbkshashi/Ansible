@@ -1,0 +1,11 @@
+---
+
+- hosts: DC
+  sudo: yes
+
+  tasks:
+   - name: Install Apache packages
+     yum: name=httpd state=present
+
+   - name: Start Apache service
+     service: name=httpd state=started enabled=True
